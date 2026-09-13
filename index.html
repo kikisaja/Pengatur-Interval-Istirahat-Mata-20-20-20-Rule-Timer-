@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengatur Interval Istirahat Mata (20-20-20 Rule)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>20-20-20 Eye Care Timer</h1>
+            <p>Jaga kesehatan mata dengan istirahat 20 detik melihat objek sejauh 20 kaki setiap 20 menit bekerja.</p>
+        </header>
+
+        <div class="timer-card">
+            <!-- Indikator Status Fase -->
+            <div class="phase-badge work" id="phaseBadge">Fase Bekerja</div>
+
+            <!-- Tampilan Lingkaran Timer -->
+            <div class="timer-display">
+                <svg class="progress-ring" width="220" height="220">
+                    <circle class="progress-ring-bg" cx="110" cy="110" r="95" />
+                    <circle class="progress-ring-circle" id="progressCircle" cx="110" cy="110" r="95" />
+                </svg>
+                <div class="timer-text" id="timeDisplay">20:00</div>
+            </div>
+
+            <!-- Instruksi Pengguna -->
+            <div class="instruction-box" id="instructionText">
+                Fokus bekerja di depan layar. Timer akan memberi peringatan saat waktunya istirahat.
+            </div>
+
+            <!-- Tombol Kontrol Utama -->
+            <div class="control-buttons">
+                <button id="btnStart" class="btn btn-primary">Mulai</button>
+                <button id="btnPause" class="btn btn-secondary" disabled>Jeda</button>
+                <button id="btnReset" class="btn btn-danger">Reset</button>
+            </div>
+
+            <!-- Pengaturan Kustom Durasi -->
+            <div class="settings-section">
+                <h3>Pengaturan Waktu (Menit/Detik)</h3>
+                <div class="settings-grid">
+                    <div class="setting-group">
+                        <label for="workDuration">Waktu Kerja (Menit)</label>
+                        <input type="number" id="workDuration" value="20" min="1" max="60">
+                    </div>
+                    <div class="setting-group">
+                        <label for="restDuration">Waktu Istirahat (Detik)</label>
+                        <input type="number" id="restDuration" value="20" min="5" max="300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
